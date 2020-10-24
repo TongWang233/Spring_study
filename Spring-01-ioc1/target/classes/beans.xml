@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="MysqlImpl" class="com.kuang.dao.impl.UserDaoMySqlImpl"/>
+    <bean id="OracleImpl" class="com.kuang.dao.impl.UserDaoOracleImpl"/>
+
+    <bean id="ServiceImpl" class="com.kuang.service.impl.UserServiceImpl">
+        <!--注意: 这里的name并不是属性 , 而是set方法后面的那部分 , 首字母小写-->
+        <!--引用另外一个bean , 不是用value 而是用 ref-->
+        <property name="userDao" ref="OracleImpl"/>
+    </bean>
+    <bean id="user" class="com.kuang.entity.User">
+        <property name="name" value="kuangshen"/>
+    </bean>
+
+    <!-- 第一种根据index参数下标设置 -->
+    <bean id="userT01" class="com.kuang.entity.UserT">
+        <!-- index指构造方法 , 下标从0开始 -->
+        <constructor-arg index="0" value="kuangshen01"/>
+    </bean>
+    <!-- 第二种根据参数名字设置 -->
+    <bean id="userT02" class="com.kuang.entity.UserT">
+        <!-- name指参数名 -->
+        <constructor-arg name="name" value="kuangshen02"/>
+    </bean>
+    <!-- 第三种根据参数类型设置 -->
+    <bean id="userT03" class="com.kuang.entity.UserT">
+        <constructor-arg type="java.lang.String" value="kuangshen03"/>
+    </bean>
+</beans>
