@@ -6,14 +6,28 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Spring-01-ioc1" />
+        <module name="Spring-05-Autowired" />
+        <module name="Spring-06-anno" />
+        <module name="Spring-09-aop" />
         <module name="Spring-02-helloword" />
+        <module name="Spring-07-NoBeanXml" />
+        <module name="Spring-04-autowrite" />
+        <module name="Spring-01-ioc1" />
+        <module name="Spring-03-DI" />
+        <module name="Spring-08-proxy" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Spring-01-ioc1" target="8" />
-      <module name="Spring-02-helloword" target="8" />
-      <module name="Spring_study" target="8" />
+      <module name="Spring-02-helloword" target="1.5" />
+      <module name="Spring-03-DI" target="1.8" />
+      <module name="Spring-04-autowrite" target="1.5" />
+      <module name="Spring-05-Autowired" target="1.5" />
+      <module name="Spring-06-anno" target="1.5" />
+      <module name="Spring-07-NoBeanXml" target="1.5" />
+      <module name="Spring-08-proxy" target="6" />
+      <module name="Spring-09-aop" target="6" />
+      <module name="Spring_study" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
